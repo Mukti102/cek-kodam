@@ -1,0 +1,77 @@
+*{
+    font-family: sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container .box{
+    width:100%;
+    height: max-content;
+    /* border: 2px solid black; */
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
+}
+.container .box .title{
+    margin: 0 auto;
+    width: max-content;
+    text-align: center;
+}
+form{
+    width: 500px;
+    margin: 40px auto;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+form .inputName{
+    height: 100%;
+    width: 70%;
+    padding: 7px 8px;
+    border-radius: 4px;
+    border: 2px solid rgb(130, 129, 129);
+    outline: none;
+}
+form .inputName:focus{
+    border: 2px solid rgb(0, 112, 191);
+}
+.inputName::placeholder{
+    color: rgb(80, 78, 78);
+    font-size: 15px;
+}
+
+form button{
+    background-color: rgb(0, 149, 255);
+    border: none;
+    padding: 9px 30px;
+    color:white;
+    font-size: 17px;
+    border-radius: 4px;
+}
+
+span{
+    margin-top: 50px ;
+    margin: 0 auto;
+    width: max-content;
+    font-weight: 700;
+}
+.kodam{
+    width: 300px;
+    height: 300px;
+    margin: 30px auto;
+}
+
+.kodam img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
