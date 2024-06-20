@@ -3,7 +3,7 @@ const span = document.querySelector('.result1');
 const gif = document.querySelector('.gif');
 
 // list kodam kodam 
-const kodams = ['harimau','ikan paus','klajengking','kucing putih','kucing','kuda speed','manusia srigala','naga api','rajawali','srigala hitam','singa rimba','ular berkepala banyak'];
+const kodams = ['harimau','ikan paus','klajengking','kucing putih','kucing','kuda speed','manusia srigala','naga api','rajawali','srigala hitam','singa rimba','ular berkepala banyak','rawa rontek'];
 
 // function ketika enter di click
 const form = document.querySelector('form').addEventListener('submit', (e) => {
@@ -13,9 +13,13 @@ const form = document.querySelector('form').addEventListener('submit', (e) => {
     if (input.value === '') {
         span.innerHTML = 'kosong';
         gif.src = `https://c4.wallpaperflare.com/wallpaper/280/258/513/cat-dark-black-profile-wallpaper-preview.jpg`;
-    } else {
+    }else {
         span.innerHTML = kodams[index];
-        gif.src = `gifs/${kodams[index]}.gif`;
+        if(span.innerHTML == 'rawa rontek'){
+            gif.src = 'https://i.pinimg.com/564x/2f/33/ec/2f33ec8fc6c2bc573d70e1458ab5d6ba.jpg'
+        }else{
+            gif.src = `gifs/${kodams[index]}.gif`;
+        }
     }
     input.value = '';
     speakText('kodam mu adalah '+span.innerHTML); // Call the speakText function
