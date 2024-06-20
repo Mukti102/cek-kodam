@@ -1,39 +1,65 @@
-*{
+* {
     font-family: sans-serif;
 }
-body{
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     background-color: black;
     color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
 }
-.container{
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/gifs/Dewi mayang sari nagasari.jpeg') no-repeat center center/cover;
+    opacity: 0.2; /* Adjust the opacity for darkening effect */
+    z-index: -1;
+}
+
+.container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.container .box{
-    width:100%;
+.container .box {
+    width: 100%;
     height: max-content;
     /* border: 2px solid black; */
     padding: 10px 0px;
     display: flex;
     flex-direction: column;
 }
-.container .box .title{
+.container .box .title {
     margin: 0 auto;
     width: max-content;
     text-align: center;
 }
-form{
-    width: 500px;
+form {
+    width: 90%;
+    max-width: 500px;
     margin: 40px auto;
     height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
+    z-index: 1; /* Ensure form is above the background */
 }
-form .inputName{
+form .inputName {
     height: 100%;
     width: 70%;
     padding: 7px 8px;
@@ -41,37 +67,69 @@ form .inputName{
     border: 2px solid rgb(130, 129, 129);
     outline: none;
 }
-form .inputName:focus{
+form .inputName:focus {
     border: 2px solid rgb(0, 112, 191);
 }
-.inputName::placeholder{
+.inputName::placeholder {
     color: rgb(80, 78, 78);
     font-size: 15px;
 }
 
-form button{
+form button {
     background-color: rgb(0, 149, 255);
     border: none;
     padding: 9px 30px;
-    color:white;
+    color: white;
     font-size: 17px;
     border-radius: 4px;
 }
 
-span{
-    margin-top: 50px ;
+span {
+    margin-top: 50px;
     margin: 0 auto;
     width: max-content;
     font-weight: 700;
+    z-index: 1; /* Ensure span is above the background */
 }
-.kodam{
+.kodam {
     width: 300px;
     height: 300px;
     margin: 30px auto;
+    z-index: 1; /* Ensure kodam is above the background */
 }
 
-.kodam img{
+.kodam img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 600px) {
+    body {
+        height: auto;
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+    form {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+    }
+
+    form .inputName {
+        width: 100%;
+    }
+
+    form button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .kodam {
+        width: 100%;
+        height: auto;
+    }
 }
